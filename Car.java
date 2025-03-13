@@ -78,7 +78,7 @@ public class Car {
     }
 
     public ArrayList<Passenger> getPass(){
-        return pass;
+        return pass; //return list of passengers
     }
 
     public String listPass(){
@@ -93,7 +93,8 @@ public class Car {
 
             directiontext = "Up";
         }
-        String finished = "Car " + ID + " at Station " + location + " | to Station " + dest + " | Direction: " +  directiontext + " | " + "Passengers in Car " + ID + ":";  //thank you evan check for helping me do this format for my code it was very hard to organize 
+        //string with the cars info
+        String finished = "Car " + ID + " at Station " + location + " | to Station " + dest + " | Direction: " +  directiontext + " | " + "Passengers in Car " + ID + ":";  //THANK YOU EVAN CHECK!!!! evan check helped me do this format for my code it was very hard to organize 
 
         for(int i = 0; i < pass.size(); i++){
             finished += "\n" + pass.get(i).toString();
