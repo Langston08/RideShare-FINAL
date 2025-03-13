@@ -17,33 +17,33 @@ public class Car {
         dest = randomDestination; 
         int randomStart = (int) (Math.random()*32); //setting the starting point (0-31)
         location = randomStart;
-        if(dest > location){
+        if(dest > location){ //determining direction based on its starting location and destination
             directionUp = true;
         } else {
             directionUp = false;
         }
-        ID = idgen;
-        idgen++;
+        ID = idgen; //assigning it a unique id
+        idgen++; //incrimenting for the next car
     }
 
     //methods
     public void move(){
-        if(dest != location){
+        if(dest != location){ //only moving if ur not at ur destinatoin
             if(directionUp){
-                location++;
+                location++; //move up if direction is up
             } else {
-                location--;
+                location--; //down
             }
         }
     }
 
     public int needDropoff(){
-        for(int i = 0; i < pass.size(); i++){
+        for(int i = 0; i < pass.size(); i++){ //check if a passanger needs to be dropped off
             if (pass.get(i).getDes() == dest){
-                return i;
+                return i; //return the passenger who needs to be dropped off
             }
         }
-        return -1;
+        return -1; //no passenger needs to be dropped off
     }
 
     public Passenger dropoff(int pos){
