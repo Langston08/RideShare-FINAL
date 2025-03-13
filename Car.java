@@ -48,33 +48,33 @@ public class Car {
 
     public Passenger dropoff(int pos){
         if(pos != -1){
-            Passenger temp = pass.get(pos);
-            pass.remove(pos);
-            return temp;
+            Passenger temp = pass.get(pos); //get the passenger
+            pass.remove(pos); //remove the passenger from list
+            return temp; //return the dropped-off passenger
         }
-        return null;
+        return null; //no passenger to drop off
     }
 
     public void remove(int p){
-        pass.remove(p);
+        pass.remove(p); //remove passenger at specified position
     }
 
-    public void pickup(Passenger p){
-        if(pass.size() <= 3){
+    public void pickup(Passenger p){ //add a new passenger to the care if theres space
+        if(pass.size() <= 3){ //MAX 3!!!!
             pass.add(p);
         }
     }
 
     public int getDes(){
-        return dest;
+        return dest; //return destinatoin
     }
 
     public int getLoc(){
-        return location;
+        return location; //return current location
     }
 
     public boolean getDir(){
-        return directionUp;
+        return directionUp; //return direction the car is moving in
     }
 
     public ArrayList<Passenger> getPass(){
