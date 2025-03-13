@@ -1,21 +1,28 @@
 import java.util.ArrayList;
+
 public class Road {
-    /* fields */
-    private ArrayList<Car> cars;
-    private ArrayList<Station> stations;
-    private int carAmt;
+    //fields
+
+    private ArrayList<Car> cars; //list of cars on the road
+    private ArrayList<Station> stations; //list of stations
+    private int carAmt; //number of cars on the road
 
 
 
-    /* constructors */
+    //constructors
+
     public Road(int myCarAmt, int passAmt){
-        carAmt = myCarAmt;
-        stations = new ArrayList<Station>();
+
+        carAmt = myCarAmt; //set the number of cars
+
+        stations = new ArrayList<Station>(); //initalize the list of stations
+
         for(int i = 0; i <= 31; i++){
+
             stations.add(new Station());
         }
 
-        cars = new ArrayList<Car>();
+        cars = new ArrayList<Car>(); //initalize list of cars
         for(int i = 0; i < carAmt; i++){
             cars.add(new Car());
         }
