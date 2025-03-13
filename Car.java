@@ -99,6 +99,8 @@ public class Car {
         for(int i = 0; i < pass.size(); i++){
             finished += "\n" + pass.get(i).toString();
         }
-        return finished;
+        return finished; //return completed string
     }
 }
+
+//DONE
