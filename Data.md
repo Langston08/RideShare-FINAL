@@ -1,0 +1,1 @@
+The average was (5 / 50) * 100 = 10%.
