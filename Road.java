@@ -3,8 +3,9 @@ import java.util.ArrayList;
 public class Road {
     //fields
 
-    private ArrayList<Car> cars; //list of cars on the road
+   
     private ArrayList<Station> stations; //list of stations
+    private ArrayList<Car> cars; //list of cars on the road
     private int carAmt; //number of cars on the road
 
 
