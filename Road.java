@@ -137,14 +137,16 @@ public class Road {
         }
     }
 
-
+    //method moves all cars along the road
     public void move(){
 
         for(int c = 0; c < cars.size(); c++){
-            cars.get(c).move();
-
+            cars.get(c).move(); //move the car
+            
+            //if car has reached its destination delete it
             if(carIsAtDestination(cars.get(c))){
                 deleteCar(cars.get(c));
+                //just for organizatoin that evan suggested i do
             
             } else {
                 dropoff(c);
