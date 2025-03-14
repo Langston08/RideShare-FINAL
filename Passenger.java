@@ -1,8 +1,9 @@
 public class Passenger{
     //fields
-    private int dest;
     private int ID;
     private static int idgen;
+    private int dest;
+  
 
     //constructors
     public Passenger(int mydest){
