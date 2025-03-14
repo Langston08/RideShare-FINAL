@@ -109,7 +109,7 @@ public class Road {
         return false; //car hasnt reached its destination
 
     }
-
+//method to delete car from the road when its reached its destination
     public void deleteCar(Car c){
         int station = c.getLoc();
         ArrayList<Passenger> pass = c.getPass();
