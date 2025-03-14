@@ -29,15 +29,17 @@ public class Road {
         }
 
         for(int i = 0; i < passAmt; i++){
-            Passenger p = new Passenger((int) (Math.random()*32));
+
+            Passenger p = new Passenger((int) (Math.random()*32)); 
             //random starting point
-            int randS = (int) (Math.random()*32);
+            
+            int randomStation = (int) (Math.random()*32);
             //makes sure passenger destination isnt going to be the same as the starting station
-            while(p.getDes()==randS){
-                randS = (int) (Math.random()*32);
+            while(p.getDes()==randomStation){
+                randomStation = (int) (Math.random()*32);
             }
             //add the passenger to the randomly chosen station
-            stations.get(randS).add(p);
+            stations.get(randomStation).add(p);
             
         }
 //put passengers in the cars
@@ -57,6 +59,7 @@ public class Road {
             ArrayList<Passenger> passUp = new ArrayList<Passenger>();
             ArrayList<Passenger> passDown = new ArrayList<Passenger>();
             //distribute passengers btwn those going up and going down
+
             for(int i = 0; i < pass.size(); i++){
                 if(pass.get(i).getDes() > s){
                     passUp.add(pass.get(i)); //going up
@@ -65,15 +68,15 @@ public class Road {
                 }
             }
             //checking if car is at the station and if its going up
-            for(int c = 0; c < cars.size(); c++){
-                if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==true){
+            for(int c = 0; c < cars.size(); c++){ //loop through all the cars
+                if((cars.get(c).getLoc() == s) && cars.get(c).getDir()==true){ //checking if location matches station and if its heading in the right direction
                     ArrayList<Passenger> carPass = cars.get(c).getPass();
                     for(int i = 0; i < passUp.size(); i++){
                         
                         if(carPass.size() < 4){
-                            cars.get(c).pickup(passUp.get(0));
-                            stations.get(s).delete(passUp.get(0));
-                            passUp.remove(i);
+                            cars.get(c).pickup(passUp.get(0)); //pick up first passenger
+                            stations.get(s).delete(passUp.get(0)); //remove from station
+                            passUp.remove(i); //remove passenger from list
                             i--;
                         }
                             
