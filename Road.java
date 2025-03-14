@@ -149,32 +149,35 @@ public class Road {
                 //just for organizatoin that evan suggested i do
             
             } else {
+                //drop off passengers if u can
                 dropoff(c);
             }
             
             
 
-            
+            //reassign passengers from stations to cars after moving
         }
         putPassengersInCars();
 
     }
 
+    //returns the list of cars on the road
     public ArrayList<Car> getCars(){
         return cars;
     }
 
-    
+    //converting to string for printing
     public String toString(){
         String finished = "";
 
+        //adding info abt each station's passengers to the string
         for(int i = 0; i < stations.size(); i++){
             finished += stations.get(i).listPass();
             finished += "\n\n";
         }
 
         finished += "\n";
-
+        //add cars passengers info to the string
         for(int i = 0; i < cars.size(); i++){
             finished += cars.get(i).listPass();
             finished += "\n\n";
@@ -183,6 +186,6 @@ public class Road {
         finished += "\n";
 
        
-        return finished;
+        return finished; //return string representing roads final 
     }
 }
