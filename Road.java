@@ -112,25 +112,27 @@ public class Road {
 //method to delete car from the road when its reached its destination
     public void deleteCar(Car c){
         int station = c.getLoc();
-        ArrayList<Passenger> pass = c.getPass();
+        ArrayList<Passenger> pass = c.getPass(); //passengers in the car
 
+        //add passengers from the car back to the station
         for(int i = 0; i < pass.size(); i++){
             stations.get(station).add(pass.get(i));
         }
 
-       
+       //removes the car from the list of cars on the road
         cars.remove(c);
         
 
     }
 
-
+    //method to drop off passengers at their destination
     public void dropoff(int c){
-        ArrayList<Passenger> pass = cars.get(c).getPass();
+        ArrayList<Passenger> pass = cars.get(c).getPass(); //gets list of passengers
         for(int p = 0; p < pass.size(); p++){
+            //if the passengers destination matches car locaition, they get dropped off
             if(cars.get(c).getLoc()==pass.get(p).getDes()){
-                stations.get(cars.get(c).getLoc()).add(pass.get(p));
-                cars.get(c).remove(p);
+                stations.get(cars.get(c).getLoc()).add(pass.get(p)); //add passenger to station
+                cars.get(c).remove(p); //remove passenger from car
             }
         }
     }
